@@ -47,6 +47,13 @@ body, html {
   text-shadow: 0 0 .5rem white;
 }
 
+.playing {
+  transform: scale(1.1);
+  border-color: #34a4ad;
+  box-shadow: 0 0 1rem #34a4ad;
+
+}
+
 kbd {
   display: block;
   font-size: 4rem;

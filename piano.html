@@ -112,14 +112,16 @@
 
 <script>
 
-  function playPiano(s) {
-  	const audio = document.querySelector(`audio[data-key="${s.keyCode}"]`);
-  	const key = document.querySelector(`.key[data-key="${s.keyCode}"]`);
+  window.addEventListener('keydown', function(s) {
+  	const audio = document.querySelector(`audio[data-key="${s.keyCode}"]`); // the flaw is here somewhere you can do it
+  	const key = document.querySelector(`.key[data-key="${s.keyCode}"]`, `.key2[date-key="${s.keyCode}"]`);
+  	// const key2 = document.querySelector(`.key2[date-key="${s.keyCode}"]`);
   	if(!audio) return;
   	audio.currentTime = 0;
     audio.play();
     key.classList.add('playing');
-  }
+    key2.classList.add('playing');
+  });
 
   function removeTransition(s) {
   	if(s.propertyName !=='transform') return;
